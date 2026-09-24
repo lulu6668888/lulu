@@ -64,7 +64,7 @@ pipeline {
                     mkdir -p Build
 
                     "${UNITY}" \
-                    -projectPath "/Users/lulu/Desktop/Jenkins_unity" \
+                    -projectPath "${WORKSPACE}" \
                     -batchmode \
                     -quit \
                     -buildTarget "${PLATFORM}" \
@@ -72,7 +72,7 @@ pipeline {
                     -platform "${PLATFORM}" \
                     -appVersion "${APP_VERSION}" \
                     -buildNumber "${APP_BUILD_CODE}" \
-                    -logFile "/Users/lulu/Desktop/Jenkins_unity/Build/unity.log"
+                    -logFile "${WORKSPACE}/Build/unity.log"
                 '''
             }
         }
